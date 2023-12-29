@@ -24,7 +24,33 @@
 </template>
 
 <script>
+// import {
+//   // ref,
+//   onBeforeMount,
+//   onMounted,
+//   onBeforeUpdate,
+//   onUpdated,
+//   onBeforeUnmount,
+//   onUnmounted,
+// } from "vue";
+
 import { ref } from "vue";
+const fun2 = () => {
+  // syncronous Method
+  console.log("Fun2 is starting");
+
+  // This is Asyncronous Method (put console.log in a anonymous function)
+
+  // setTimeout(() => {
+  //   console.log("Fun2 is starting");
+  // }, 3000);
+};
+const fun1 = () => {
+  console.log("Fun1 is starting");
+  fun2();
+  console.log("Fun1 is ending");
+};
+fun1();
 
 export default {
   name: "HelloWorld",
@@ -34,14 +60,16 @@ export default {
   data() {
     const inputText = ref("");
     const email = ref("");
-    let a = 5;
+    let a = 3;
     let b = 5;
     console.log("a + b = ", a + b);
+
     return {
       inputText,
       email,
     };
   },
+
   beforeCreate() {
     console.log("beforecreate child");
   },
@@ -66,19 +94,43 @@ export default {
   unmounted() {
     console.log("unmounted child");
   },
+
+  // setup() {
+  //   onBeforeMount(() => {
+  //     console.log("onBeforeMount child");
+  //   });
+  //   onMounted(() => {
+  //     console.log("onMounted child");
+  //   });
+  //   onBeforeUpdate(() => {
+  //     console.log("onBeforeUpdate child");
+  //   });
+  //   onUpdated(() => {
+  //     console.log("onUpdated child");
+  //   });
+  //   onBeforeUnmount(() => {
+  //     console.log("onBeforeUnmount child");
+  //   });
+  //   onUnmounted(() => {
+  //     console.log("onUnmounted child");
+  //   });
+  // },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped>
 h3 {
   margin: 40px 0 0;
 }
+
 .form {
   width: 50%;
   margin: auto;
   padding: 1rem;
 }
+
 label {
   font-weight: bold;
 }

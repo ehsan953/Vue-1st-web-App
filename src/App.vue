@@ -1,18 +1,18 @@
 <template>
-<img class="logo-img" alt="Vue logo" src="./assets/ehsan8.jpeg">
-<HelloWorld msg="Welcome to Ehsan App" />
+  <img class="logo-img" alt="Vue logo" src="./assets/ehsan8.jpeg" />
+  <HelloWorld msg="Welcome to Ehsan App" />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from "./components/HelloWorld.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
+    HelloWorld,
   },
   data() {
-    let a = 2;
+    let a = 5;
     let b = 5;
     console.log("a + b = ", a + b);
     return {};
